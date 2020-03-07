@@ -3,7 +3,7 @@ from django.db import models
 
 # TODO: HEADTOHEAD
 # TODO: Description
-
+#TODO: picture
 
 class Judoka(models.Model):
     """ Model that defines result"""
