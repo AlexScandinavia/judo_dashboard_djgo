@@ -79,6 +79,9 @@ DATABASES = {
         'PASSWORD': 'shohei_ono',
         'HOST': '127.0.0.1',  # Utile si votre base de données est sur une autre machine
         'PORT': '3306',  # ... et si elle utilise un autre port que celui par défaut
+        'OPTIONS': {
+            "init_command": "SET foreign_key_checks = 0;",
+        }
     }
 }
 

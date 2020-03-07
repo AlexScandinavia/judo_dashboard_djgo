@@ -16,6 +16,9 @@ class Judoka(models.Model):
     def __str__(self):
         return "{0} {1}".format(self.first_name, self.last_name)
 
+    def save(self):
+        self.country = self.country.upper()
+
 class JudoResult(models.Model):
     """ Model that defines result"""
     result = models.IntegerField()
