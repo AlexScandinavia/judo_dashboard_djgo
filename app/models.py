@@ -1,6 +1,9 @@
 from django.db import models
 
-# Create your models here.
+
+# TODO: HEADTOHEAD
+# TODO: Description
+
 
 class Judoka(models.Model):
     """ Model that defines result"""
@@ -19,6 +22,10 @@ class Judoka(models.Model):
     def save(self):
         self.country = self.country.upper()
 
+    def return_url(self):
+        return "https://www.judoinside.com/judoka/{}".format(self.judoins_id)
+
+
 class JudoResult(models.Model):
     """ Model that defines result"""
     result = models.IntegerField()
@@ -33,4 +40,3 @@ class JudoResult(models.Model):
 
     def __str__(self):
         return self.event_name
-
