@@ -1,9 +1,6 @@
 from django.db import models
 
-
 # TODO: HEADTOHEAD
-# TODO: Description
-#TODO: picture
 
 class Judoka(models.Model):
     """ Model that defines result"""
@@ -11,6 +8,8 @@ class Judoka(models.Model):
     last_name = models.CharField(max_length=64)
     country = models.CharField(max_length=64)
     birthday = models.DateField(verbose_name="Birthday")
+    photo = models.ImageField(upload_to="photos/")
+    description = models.CharField(max_length=512)
     judoins_id = models.IntegerField()
 
     class Meta:
