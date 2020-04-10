@@ -24,3 +24,9 @@ for event in events:
 photo = soup.find_all(class_="small-12 medium-6 columns judokaData profile-photo-centered")[0].findAll("img")[0]["src"]
 URL_image = r'https://www.judoinside.com' + photo
 
+from app.models import Judoka
+
+import os
+
+env = os.environ.copy()
+SECRET_KEY = env['SECRET_KEY']
