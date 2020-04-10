@@ -8,7 +8,7 @@ class Judoka(models.Model):
     last_name = models.CharField(max_length=64)
     country = models.CharField(max_length=64)
     birthday = models.DateField(verbose_name="Birthday")
-    photo = models.ImageField(upload_to="photos/")
+    photo = models.ImageField(upload_to="photos_avatar/")
     description = models.CharField(max_length=512)
     judoins_id = models.IntegerField()
 
@@ -20,6 +20,7 @@ class Judoka(models.Model):
 
     def save(self):
         self.country = self.country.upper()
+        self.save()
 
     def return_url(self):
         return "https://www.judoinside.com/judoka/{}".format(self.judoins_id)
