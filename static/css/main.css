@@ -1,0 +1,57 @@
+@font-face {
+  font-family: orsted-sans-regular;
+  src: url('../fonts/orsted_sans/OrstedSans-Regular.woff')
+}
+
+html *
+{
+   font-family: orsted-sans-regular;
+}
+
+.table {
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.table td {
+  border: 1px solid #B1B8C0;
+  padding: 4px 10px;
+}
+
+.table th {
+  border: 1px solid #B1B8C0;
+  padding: 4px 10px;
+  font-weight: normal;
+}
+
+.table thead {
+    background-color: #4099DA;
+    color: white;
+}
+
+form .btn, .btn:hover, .btn:active, .btn:visited {
+    background-color: #3B4956;
+    border: none;
+    color: #FFFFFF;
+    border-radius: 22px;
+    padding: 5px 15px;
+    font-size: 15px;
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+input {
+    border: 1px solid #B1B8C0;
+    border-radius: 4px;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+#my_img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

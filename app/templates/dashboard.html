@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Django Highcharts Example</title
+
+</head>
+
+<body>
+    <!-- Import Libraries for Higcharts -->
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <!-- Dropdown menu -->
+    <select id="chartType">
+      <option value="medals"> Medals </option>
+      <option value="win_rate">  Win rate </option>
+      <option value="3">2nd meeting of year</option>
+    </select>
+
+
+
+   <!-- The chart is displayed in the section with id="container" and get its data thanks to the view"main_chart_data"  -->
+    <div id="container" class="ChartBox"></div>
+
+
+
+    {% load static %}  <!-- option settings of highchart + function to fetch data to update graph  -->
+    <script src="{% static 'js/main_chart.js' %}"></script>
+    <script>
+        //Create main graph
+        var mychart = new Highcharts.chart('container', dataOptions);
+        RequestData_Update('{% url 'main_chart_data'%}/' + $("#chartType").val());
+
+        // Update the chart according to the scrolldown list
+        $("#chartType").click(function() {
+          var url_input_request =  '{% url 'main_chart_data'%}/' + $("#chartType").val();
+          RequestData_Update(url_input_request);
+          ;
+        });
+    </script>
+
+
+</body>
+</html>
