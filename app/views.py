@@ -13,8 +13,10 @@ def dashboard(request):
 
 def main_chart_data(request, type="medals"):
 
-    if type=="medals":
+
+    if type == "medals":
         chart = {
+            'title': {"text": "Number of Medals/year"},
             'xAxis': {'categories': [2014, 2015, 2016, 2017, 2018, 2019, 2020]},
             'yAxis': {"title": {"text": 'Total number of medals/year'}},
             'series': [{
@@ -30,10 +32,11 @@ def main_chart_data(request, type="medals"):
         }
     else:
         chart = {
+            'title': {"text": "Win rate [%] over time"},
             'xAxis': {'categories': [2014, 2015, 2016, 2017, 2018, 2019, 2020]},
             'yAxis': {"title": {"text": 'Win rate [%]'}},
             'series': [{"name": 'Win rate [%]',
-                "data": [10, 40, 20, 60, 80, 100]}]
+                        "data": [10, 40, 20, 60, 80, 100]}]
         }
 
 
